@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANDHAAN'24 | High Octane</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap');
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Animated Cyber Background */
+        .bg-animate {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #001a1a 0%, #000 80%);
+            z-index: -1;
+        }
+
+        .cyber-grid {
+            position: absolute;
+            width: 200%; height: 200%;
+            background-image: linear-gradient(#00f2ff11 1px, transparent 1px), linear-gradient(90deg, #00f2ff11 1px, transparent 1px);
+            background-size: 50px 50px;
+            transform: perspective(500px) rotateX(60deg);
+            bottom: -50%; left: -50%;
+            animation: grid-move 20s linear infinite;
+        }
+
+        @keyframes grid-move {
+            0% { transform: perspective(500px) rotateX(60deg) translateY(0); }
+            100% { transform: perspective(500px) rotateX(60deg) translateY(50px); }
+        }
+
+        .hero-text {
+            font-family: 'Syncopate', sans-serif;
+            text-transform: uppercase;
+            background: linear-gradient(to bottom, #fff 30%, #00f2ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 15px rgba(0, 242, 255, 0.5));
+        }
+
+        .event-card {
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid rgba(0, 242, 255, 0.1);
+            backdrop-filter: blur(15px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .event-card:hover {
+            border-color: #00f2ff;
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.15);
+            transform: translateY(-10px);
+        }
+
+        .neon-border {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            border: 2px solid #00f2ff;
+            clip-path: polygon(0 0, 15% 0, 0 15%);
+            opacity: 0.5;
+        }
+
+        /* Image frame styling */
+        .img-container {
+            position: relative;
+            clip-path: polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%);
+        }
+
+        .image-overlay {
+            background: linear-gradient(45deg, rgba(0,242,255,0.2) 0%, transparent 100%);
+            mix-blend-mode: overlay;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-animate"><div class="cyber-grid"></div></div>
+
+    <nav class="p-6 flex justify-between items-center sticky top-0 z-50 backdrop-blur-md border-b border-white/5">
+        <div class="text-2xl font-bold tracking-tighter">SANDHAAN<span class="text-cyan-400">'24</span></div>
+        <a href="index.html" class="text-[10px] tracking-[0.3em] font-bold border border-cyan-400/30 px-4 py-2 hover:bg-cyan-400 hover:text-black transition-all">BACK TO BASE</a>
+    </nav>
+
+    <div class="container mx-auto px-6 py-20">
+        <header class="text-center mb-24">
+            <h1 class="hero-text text-6xl md:text-9xl font-bold mb-4">SANDHAAN</h1>
+            <p class="text-cyan-100/60 max-w-xl mx-auto tracking-[0.5em] uppercase text-xs">Accessing Neural Network...</p>
+        </header>
+
+        <div id="dynamic-events" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            </div>
+    </div>
+
+    <script>
+        const events = [
+            { 
+                title: "Robo Saga", 
+                tag: "Heavy Metal", 
+                desc: "The ultimate battle of bots in a steel cage.", 
+                img: "#" 
+            },
+            { 
+                title: "Drone-A-Thon", 
+                tag: "Aerodynamics", 
+                desc: "Navigate through technical obstacles at high speed.", 
+                img: "#" 
+            },
+            { 
+                title: "AlgoArena", 
+                tag: "Code", 
+                desc: "Optimize or be optimized. The syntax war begins.", 
+                img: "#" 
+            },
+            { 
+                title: "HydroFlight", 
+                tag: "Science", 
+                desc: "Aero-modeling using pressurized water propulsion.", 
+                img: "#" 
+            },
+            { 
+                title: "Site Mimic", 
+                tag: "Web 3.0", 
+                desc: "Build the future of UI with pixel perfection.", 
+                img: "#" 
+            },
+            { 
+                title: "Wizard's Chess", 
+                tag: "Strategy", 
+                desc: "Checkmate the competition in a grand strategy duel.", 
+                img: "#" 
+            }
+        ];
+
+        const container = document.getElementById('dynamic-events');
+
+        // Render cards with images
+        container.innerHTML = events.map(e => `
+            <div class="event-card relative p-6 rounded-xl group cursor-pointer" data-tilt data-tilt-max="10">
+                <div class="neon-border"></div>
+                
+                <div class="flex justify-between items-center mb-6">
+                    <span class="text-[9px] tracking-[0.4em] text-cyan-400 font-bold uppercase">${e.tag}</span>
+                    <div class="flex gap-1">
+                        <div class="w-1 h-1 bg-cyan-400 rounded-full animate-pulse"></div>
+                        <div class="w-1 h-1 bg-cyan-400/30 rounded-full"></div>
+                    </div>
+                </div>
+
+                <div class="img-container relative w-full h-44 mb-6 overflow-hidden border border-white/5 bg-zinc-900">
+                    <img src="${e.img}" alt="${e.title}" 
+                         class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700 scale-110 group-hover:scale-100">
+                    <div class="image-overlay absolute inset-0"></div>
+                </div>
+
+                <h2 class="text-2xl font-bold mb-3 tracking-tight group-hover:text-cyan-400 transition-colors uppercase italic">${e.title}</h2>
+                <p class="text-gray-400 text-sm leading-relaxed mb-4">${e.desc}</p>
+                
+                <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[10px] text-zinc-500 uppercase font-mono tracking-widest">Protocol.active</span>
+                    <svg class="w-4 h-4 text-cyan-400 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </div>
+            </div>
+        `).join('');
+
+        // Re-initialize Tilt on the new elements
+        VanillaTilt.init(document.querySelectorAll(".event-card"));
+    </script>
+</body>
+</html>

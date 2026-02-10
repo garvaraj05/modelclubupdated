@@ -2,8 +2,20 @@
 // MOBILE MENU TOGGLE
 // ===============================
 function toggleMenu() {
-    document.getElementById('navLinks').classList.toggle('active');
+    const nav = document.getElementById('navLinks');
+    const blur = document.getElementById('mobileBlur');
+
+    nav.classList.toggle('active');
+    blur.classList.toggle('active');
 }
+
+// Close menu automatically when any nav link is clicked (mobile)
+document.querySelectorAll('#navLinks a').forEach(link => {
+    link.addEventListener('click', function () {
+        document.getElementById('navLinks').classList.remove('active');
+        document.getElementById('mobileBlur').classList.remove('active');
+    });
+});
 
 
 // ===============================
@@ -95,6 +107,11 @@ navContainer.addEventListener("mouseleave", function () {
 
     });
 
+
+
+    document.querySelector(".clogo").addEventListener("click", function(){
+        window.location.href = "./index.html";
+    });
     // -------------------------------
 
 
