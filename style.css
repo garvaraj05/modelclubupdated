@@ -14,10 +14,15 @@
 }
 
 @font-face {
-    font-family: 'Bauhaus 93 Regular';
-    src: url('https://static.wfonts.com/data/2014/12/29/bauhaus-93/Bauhaus 93 Regular.ttf') format('ttf');
-    font-display: swap;
-}
+		font-family: 'Bauhaus93';
+		src: url('./assets/fonts/Bauhaus93/Bauhaus93.eot');
+		src: local('☺'),
+		url('./assets/fonts/Bauhaus93/Bauhaus93.woff') format('woff'),
+		url('./assets/fonts/Bauhaus93/Bauhaus93.ttf') format('truetype'),
+		url('./assets/fonts/Bauhaus93/Bauhaus93.svg') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
 
 #bauhaus {
     font-family: 'Bauhaus 93 Regular', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -1025,6 +1030,19 @@ footer {
     color: #000000;
 }
 
+/* research toggle btn  */
+.toggle-btn {
+    background: transparent;
+    color: #ccc;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    color: #fff;
+}
 
 
 /* Mobile toggle */

@@ -4,19 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Model Club | BIT Sindri</title>
+    <title>Research Section | Model Club</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
-        rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        body {
+            background-color: #050505;
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
 
+        .member-card {
+            background: rgb(196 189 189 / 7%);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(14px);
+
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 18px;
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.35);
+
+            transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+
+
+        .member-card:hover {
+            border-color: #00d2ff;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 210, 255, 0.25);
+        }
+
+        .glow-bar {
+            height: 3px;
+            width: 0;
+            background: #00d2ff;
+            transition: width 0.4s ease;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .member-card:hover .glow-bar {
+            width: 100%;
+        }
+
+        .img-container {
+            border: 2px solid #333;
+            overflow: hidden;
+        }
+
+        .member-card:hover .img-container {
+            border-color: #00d2ff;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="bg-particles"></div>
 
     <header>
         <nav class="navbar">
@@ -41,13 +89,48 @@
     </header>
     <div class="mobile-blur" id="mobileBlur"></div>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Coming Soon</h1>
-        </div>
-    </section>
+    <!-- Wrapper only for main content -->
+    <div class="pt-32 px-4 md:px-10">
 
-     <footer class="main-footer" id="contact">
+        <div class="bg-particles"></div>
+
+        <div class="max-w-7xl mx-auto mb-10">
+            <!-- <a href="index.html"
+                class="back-btn inline-flex items-center px-5 py-2 rounded-full text-sm font-medium tracking-wide">
+                <i class="fas fa-arrow-left mr-2"></i>
+            </a> -->
+        </div>
+
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h1 class="text-3xl md:text-5xl font-extrabold uppercase tracking-widest mb-4">
+                    <span class="text-cyan-400">Research Section</span>
+                </h1>
+                <div class="h-1 w-20 bg-cyan-500 mx-auto mb-4"></div>
+                <p class="text-gray-500 max-w-2xl mx-auto italic">
+                    Inspiring inquiry, fostering innovation, and achieving excellence.
+                </p>
+            </div>
+
+            <div class="flex justify-center mb-10">
+                <div class="toggle-wrapper flex rounded-full p-1 bg-white/10 backdrop-blur-md border border-white/20">
+                    <button id="iitBtn" class="toggle-btn active px-6 py-2 rounded-full text-sm font-semibold">
+                        IITs
+                    </button>
+                    <button id="foreignBtn" class="toggle-btn px-6 py-2 rounded-full text-sm font-semibold">
+                        Foreign
+                    </button>
+                </div>
+            </div>
+            <div style="margin-bottom: 40px;" id="team-grid"
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            </div>
+        </div>
+
+    </div> <!-- End wrapper -->
+
+    <!-- Footer full width -->
+    <footer class="main-footer" id="contact">
         <div class="footer-container">
             <div class="footer-box reveal">
                 <div class="location-icon">
@@ -82,20 +165,163 @@
         </div>
 
         <div class="footer-bottom">
-            <p class="copyright">Copyright &copy; 2026 The Model Club. All rights reserved.</p>
+            <p class="copyright">
+                Copyright &copy; 2026 The Model Club. All rights reserved.
+            </p>
             <div class="developer-info">
                 <p>Designed and developed by</p>
                 <div class="dev-badges">
-                    <span class="dev-card">Himanshu Kumar <a href="#"><i class="fab fa-linkedin"></i></a> <a href="#"><i
-                                class="fab fa-instagram"></i></a></span>
-                    <span class="dev-card">Garva Raj <a href="#"><i class="fab fa-linkedin"></i></a> <a href="#"><i
-                                class="fab fa-instagram"></i></a></span>
+                    <span class="dev-card">
+                        Himanshu Kumar
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </span>
+                    <span class="dev-card">
+                        Garva Raj
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </span>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
+
+    <script>
+        const iitMembers = [
+            { name: "Harsh Kumar", dept: "Civil Engineering", year: "2k23", photo: "./assets/Logo/harshkumar.jpg", prof: "Under Prof. Arun Prasad, Dept of Civil Engineering, IIT BHU", topic: "Topic: Study of variation of permeability of compacted pond ash at different moisture content" },
+            { name: "Payal Jaiswal", dept: "Chemical Engineering", year: "2k23", photo: "./assets/Logo/payaljaiswal.jpg", prof: "Under Dr. Jyoti Prasad Chakraborty, Department of Chemical Engineering, IIT BHU", topic: "Topic: Biomass, Pyrolysis, Torifaction." },
+            { name: "Rishav Raj", dept: "Civil Engineering", year: "2k23", photo: "./assets/Logo/rishavraj.jpg", prof: "Under Prof. Arun Prasad, Dept of Civil Engineering, IIT BHU", topic: "Topic: To Study the Shear Strength Parameters of Reinforced and Unreinforced Soil Using Triaxial Test." },
+            { name: "Priyanka Jaiswal", dept: "Mechanical Engineering", year: "2k23", photo: "./assets/Logo/priyankajaiswal.jpg", prof: "Under Dr. Nilanjan Mallik, Dept. Of Mechanical Engineering, IIT BHU", topic: "Topic: Micromechanics using Finite Element Method." },
+            { name: "Asif Gulmozzam Fayazi", dept: "Chemical Engineering", year: "2k23", photo: "./assets/Logo/asif.jpeg", prof: "Under Dr. Satarupa Dutta , Dept of Chemical Engineering, IIT BHU", topic: "Topic: Fluid mechanics, microflow in nanotubes" },
+            { name: "Indronil Supakar", dept: "Mechanical Engineering", year: "2k23", photo: "./assets/Logo/indronilsupakar.jpeg", prof: "Under Dr. Nilanjan Mallik, Dept. Of Mechanical Engineering, IIT BHU", topic: "Topic: Properties of Electrical Machines used in Mechatronics" },
+            { name: "Tisha Khalkho", dept: "Civil Engineering", year: "2k23", photo: "./assets/Logo/tishakhalkho.png", prof: "Under Dr. Suresh Kumar, Dept of Civil Engineering, IIT BHU", topic: "Topic: Ground Improvement Techniques using Soft soil Stabilization" },
+            { name: "Ankit Choudhary", dept: "Electrical Engineering", year: "2k23", photo: "./assets/Logo/ankitchoudhary.jpg", prof: "Under Dr. Nilanjan Mallik, Dept. Of Mechanical Engineering, IIT BHU", topic: "Topic: Properties of Electrical Machines used in Mechatronics" },
+            { name: "Raj Kumar Barnwal", dept: "Chemical Engineering", year: "2k23", photo: "./assets/Logo/rajbarnwal.jpg", prof: "Under Dr. Rohit Kumar, Department of Chemical Engineering, IIT BHU", topic: "Topic: Catalytic Methane Decomposition" },
+            { name: "Vijay Kumar Modak", dept: "Production Engineering", year: "2k23", photo: "./assets/Logo/vijaymodak.jpeg", prof: "Under Dr. Nilanjan Mallik, Dept. Of Mechanical Engineering, IIT BHU", topic: "Topic: Study of smart composites using Finite Element Method through Ansys." },
+            { name: "Divya Giri", dept: "Mechanical Engineering", year: "2k23", photo: "./assets/Logo/divyagiri.jpg", prof: "Under Dr. Pradyumna Ghosh,Dept of Mechanical Engineering,IIT BHU", topic: "Topic: Microchannel Heat Transfer Analysis and Automation Using Excel-VBA" },
+            { name: "Neetu Dutta", dept: "Chemical Engineering", year: "2k23", photo: "./assets/Logo/neetudutta.jpg", prof: "Under Dr. Rajesh Kumar Upadhyay ,Department of Chemical Engineering, IIT BHU", topic: "Topic: Carbon dioxide capture using porous materials" },
+            { name: "Sourav Suman", dept: "Elec. and Comm. Engineering", year: "2k23", photo: "./assets/Logo/souravsuman.jpg", prof: "Under Prof. Amit Kumar Singh, Dept of Electronics Engineering, IIT BHU", topic: "Topic: To Study the applications of Transmission lines in Radar, Filter, Antenna etc." },
+            { name: "Nandini Roy", dept: "Electrical Engineering", year: "2k23", photo: "./assets/Logo/nandiniroy.jpg", prof: "Under Dr. Shyam Kamal, Department of Electrical Engineering, IIT BHU", topic: "Topic: Forward and Inverse Kinematics of Stewart Platform" },
+            { name: "Rishabh Raj", dept: "Electrical Engineering", year: "2k23", photo: "./assets/Logo/rishabhraj.jpeg", prof: "Under Prof Yogesh Chandratre , GGSF , Siemens, Nashik", topic: "Topic: Mechatronics" },
+            { name: "Harshita Seth", dept: "Chemical Engineering", year: "2K22", photo: "./assets/Logo/harshitaseth.jpeg", prof: "Under Prof. Rohit Kumar at IIT BHU", topic: "Topic: Fundamental of Catalysis" },
+
+            { name: "Shuvam Banerjee", dept: "Chemical Engineering", year: "2k21", photo: "./assets/Logo/shuvam.jpg", prof: "1. Under Dr. Sourav Sengupta at IIT(ISM) Dhanbad <br> 2.Under Dr. B.C. Meikap at IIT Kharagpur", topic: "Topic: 1.Application of numerical method and MATLAB in Fluid Mechanics and Transport Phenomena <br> 2. Pollution monitoring and control of Industrial Pollution" },
+
+            { name: "Rohit Mishra", dept: "Chemical Engineering", year: "2k21", photo: "./assets/Logo/rohitmishra.jpg", prof: "Under Dr. Jose V Parambil of IIT Patna", topic: "Topic: Crytalisation of small organic molecules" },
+
+            { name: "Sakshi Kumari Mishra", dept: "Civil Engineering", year: "2k21", photo: "./assets/Logo/Sakshi.jpg", prof: "Under Prof. Pavithra Parthasarathy of IIT Kharagpur", topic: "Topic: Geopolymer Concrete" },
+
+            { name: "Indrani Das", dept: "Chemical Engineering", year: "2k21", photo: "./assets/Logo/indranidas.jpg", prof: "Under Dr. Bhim Charan Meikap of IIT Kharagpur", topic: "Topic: Fluidization, Renewable Energy Sources, Pollution Monitoring and Control Industrial Pollution, Hazardous Waste Management" },
+
+            { name: "Amit Yadav", dept: "Electrical Engineering", year: "2k21", photo: "./assets/Logo/amityadav.jpg", prof: "Under Dr. Abhay Singh Gaur of IIT Kharagpur", topic: "Topic: Study and Development of Railgun" },
+
+            { name: "Anisha Kumari", dept: "Production Engineering", year: "2k21", photo: "./assets/Logo/anishakumari.jpg", prof: "Under Dr. Amitesh Kumar of IIT Varanasi (BHU)", topic: "Topic: Study of Computational Fluid Dynamics" },
+
+            { name: "Ajay Mahato", dept: "Civil Engineering", year: "2k21", photo: "./assets/Logo/ajaymahato.jpg", prof: "Under Prof. Pavithra Parthasarathy of IIT Kharagpur", topic: "Topic: Geopolymer Concrete" },
+
+            { name: "Nikita Kumari", dept: "Chemical Engineering", year: "2k21", photo: "./assets/Logo/Nikita.jpg", prof: "Under Prof. B.C Meikap of IIT Kharagpur", topic: "Topic: Performance evaluation of electrostatic precipitator installed in steel plant" },
+
+            { name: "Vikash Kumar", dept: "Chemical Engineering", year: "2k20", photo: "./assets/Logo/VikashSir.jpg", prof: "Under Prof. Sujoy Kumar Samanta of IIT Patna", topic: "Topic: Save Soil movement and organic farming" },
+
+            { name: "Payal Kumari", dept: "Civil Engineering", year: "2k20", photo: "./assets/Logo/PayalMaam.jpg", prof: "Under Prof. Tanish Dey of IIT Dhanbad", topic: "Topic: Out-of-plane Buckling of Beams Having In-Plane Elastic Restraints under Gradient Thermal Action" },
+
+            { name: "Piyush Raj", dept: "Mechanical Engineering", year: "2k20", photo: "./assets/Logo/PiyushSir.jpg", prof: "Under Prof. Pankaj Biswas of IIT Guwahati", topic: "Topic: Construction of Under Water Jet for cleaning of Biofouling Surface" },
+
+            { name: "Amrendra Tiwary", dept: "Production Engineering", year: "2k20", photo: "./assets/Logo/AmrendraSir.jpg", prof: "Under Prof. Pankaj Biswas of IIT Guwahati", topic: "Topic: Under Water Robotics for Welding Application" },
+
+            { name: "Gaurav Sonkar", dept: "Electrical Engineering", year: "2k20", photo: "./assets/Logo/GauravSir.jpg", prof: "Under Dr. Abhay Singh Gour of IIT Kharagpur", topic: "Topic: Development of Power Electronics H-Bridge" },
+
+            { name: "Shubham Kumar", dept: "Chemical Engineering", year: "2k20", photo: "./assets/Logo/ShubhamSir.jpg", prof: "Under Dr. N. Nirmalkar of IIT Ropar", topic: "Topic: Recycle of E-Waste and Circular Economy" },
+
+            { name: "Shivam Shandilya", dept: "Elec. and Comm. Engineering", year: "2k20", photo: "./assets/Logo/ShivamSir.jpg", prof: "1.Under Dr. Dhiraj Kumar of IIT Roorkee <br> 2. Under Dr. Abhay Shah of IIT Roorkee", topic: "Topic: 1. Developing novel algorithm for clustering tendency assessment and anomaly detection for Big Data <br> 2. Applying Machine Learning algorithms for anomaly detection in wireless communication" },
+
+            { name: "Abhishek Rana", dept: "Metallurgical Engineering", year: "2k20", photo: "./assets/Logo/RanaSir.jpg", prof: "Under Dr. Ankur Goswami of IIT Delhi", topic: "Topic: Vanadium Oxide based thin films for Microbolometer and Memristive Application" },
+
+            { name: "Sweta Swaraj", dept: "Chemical Engineering", year: "2k20", photo: "./assets/Logo/SwetaMaam.jpg", prof: "Under Dr. Jayanta Chakraborty of IIT Kharagpur", topic: "Topic: CFD" },
+
+            { name: "Riya Singh", dept: "Chemical Engineering", year: "2k19", photo: "./assets/Logo/RiyaSingh.jpg", prof: "Under Dr. Pankaj Tiwari of IIT Guwahati", topic: "Topic: Development of kinetic model for Conversion of biomass to useful chemical/fuel in MATLAB" },
+
+            { name: "Shivani Singh", dept: "Chemical Engineering", year: "2k18", photo: "https://res.cloudinary.com/dhxpfw6in/image/upload/h_250,w_250,c_scale/v1643119148/model2k18/shivani_maam_f9czdk.jpg", prof: "1. Under Dr. Rajesh Upadhyay of IIT BHU <br> 2. Under Dr. Nanda Kishore of IIT Guwahati", topic: "Topic: 1. Study of hydrodynamics of continuous stirred tank reactor (modeling and simulation) <br> 2.Modeling and simulations of 2D and 3D fluidized bed reactor with or without reaction" },
+
+            { name: "Abhinav Prakash", dept: "E.C.E", year: "2k18", photo: "https://res.cloudinary.com/dhxpfw6in/image/upload/h_250,w_250,c_scale/v1643118675/model2k18/abhinav_sir_ww1f8h.jpg", prof: "1. Under Prof. Anand Blusun of IIT Roorkee <br> 2. Under Prof. Brajesh Rawat of IIT Ropar", topic: "Topic: 1. Temperature analysis of 7nm FinFET based amplifier using VERILOG A codes <br> 2. Ultra-thin FinFET for sub-10 nm CMOS technology" },
+
+            { name: "Vineet Chandra Gokhale", dept: "Chemical Engineering", year: "2k18", photo: "https://res.cloudinary.com/dhxpfw6in/image/upload/h_250,w_250,c_scale/v1643119290/model2k18/vineet_dsb8qe.jpg", prof: "under the subtle guidance of Prof. Ananth Govind Rajan, IISc Banglore", topic: " Water Splitting Microkinetic Model: Has been selected to continue his internship abroad next year for Reversible Polycondensate Termination (RPT) method" },
+
+            { name: "Mayank Raj", dept: "Electrical Engineering", year: "2k18", photo: "https://res.cloudinary.com/dhxpfw6in/image/upload/h_250,w_250,c_scale/v1643119334/model2k18/mayank_d32jxi.jpg", prof: "Under Dr. Soumya Ranjan Mohanty of IIT BHU", topic: "Topic: Smartgrid working under Distribution System" },
+
+            { name: "Shanu Anand", dept: "Mining Engineering", year: "2k18", photo: "https://res.cloudinary.com/dhxpfw6in/image/upload/h_250,w_250,c_scale/v1643119370/model2k18/shanu_bdtbqc.jpg", prof: "under the subtle guidance of Prof. Ananth Govind Rajan, IISc Banglore", topic: " Water Splitting Microkinetic Model: Has been selected to continue his internship abroad next year for Reversible Polycondensate Termination (RPT) method" },
+
+            { name: "Saqlain Firoz", dept: "Production Engineering", year: "2k18", photo: "https://res.cloudinary.com/dhxpfw6in/image/upload/h_250,w_250,c_scale/v1643119371/model2k18/saqlain_yanpae.jpg", prof: "Under Prof. Pankaj Biswas of IIT Guwahati", topic: "Topic: CAD model of machine part for 3D printing involving FSW" },
+
+            { name: "Urja Ambasta", dept: "Production Engineering", year: "2k18", photo: "https://res.cloudinary.com/dhxpfw6in/image/upload/h_250,w_250,c_scale/v1643119477/model2k18/urja_hdvf7o.jpg", prof: "Under Prof. S. K Pal of IIT Kharagpur", topic: "Topic: 1. Design and simulation of parts to be subjected to machining processes on a CNC machine <br> 2. Design and animation of turret and hydraulic power pack of a CNC machine" }
+        ];
+
+        const foreignMembers = [
+            { name: "Amrendra Tiwary", dept: "Production Engineering", year: "2k20", photo: "./assets/Logo/AmrendraSir.jpg", prof: "Under the supervision of Dr. Simmon Juel", topic: "Project:Energy Transition-Power and Renewable Energy (General Electric)" },
+
+            { name: "Piyush Harsh", dept: "Electrical Engineering", year: "2k19", photo: "https://res.cloudinary.com/dxoyw0rjl/image/upload/h_250,w_250,c_scale/v1640529886/Model%20Club%202k19%20post%20holders/PiyushHarsh_compress_v4v4f8.jpg", prof: "1. Under the supervision of Dr. Maode Ma, Qatar University <br> 2. Dr. Gaurav Trivedi, IIT Guwahati", topic: "Project: 1. AI for anomaly detection in IoT systems <br> 2. Legendre Memory Unit" },
+
+            { name: "Milan kashyap", dept: "Civil Engineering", year: "2k18", photo: "https://res.cloudinary.com/dhxpfw6in/image/upload/h_250,w_250,c_scale/v1643118680/model2k18/milan_sir_ebr6b1.jpg", prof: "Under the supervision of professor Mr. Kyle Toushigant at Dalhousie University, Halifax, Nova Scotia, Canada", topic: "" },
+
+            { name: "Abhinav Prakash", dept: "ECE", year: "2k18", photo: "https://res.cloudinary.com/dhxpfw6in/image/upload/h_250,w_250,c_scale/v1643118675/model2k18/abhinav_sir_ww1f8h.jpg", prof: "Under the supervision of Dr. Yushi Zhou at Lakehead University -Thunder Bay, Ontario", topic: "" },
+
+            { name: "Ashutosh Kumar", dept: "Mechanical Engineering", year: "2k18", photo: "https://res.cloudinary.com/dhxpfw6in/image/upload/h_250,w_250,c_scale/v1643118687/model2k18/ashutosh_sir_wycwyi.jpg", prof: "Under the supervision of Dr. Lucas Hof at Superior Technology School, Montreal, Quebec, Canada", topic: "" },
+        ];
+
+        const container = document.getElementById('team-grid');
+        const iitBtn = document.getElementById('iitBtn');
+        const foreignBtn = document.getElementById('foreignBtn');
+
+        function renderMembers(data) {
+            container.innerHTML = "";
+
+            data.forEach(m => {
+                container.innerHTML += `
+        <div class="member-card relative overflow-hidden rounded-xl p-6 flex flex-col items-center text-center">
+
+            <div class="img-container w-36 h-36 rounded-xl mb-5 bg-gray-800">
+                <img src="${m.photo}" alt="${m.name}"
+                     class="w-full h-full object-cover">
+            </div>
+
+            <h2 class="text-lg font-bold uppercase tracking-wide mb-2">
+                ${m.name}
+            </h2>
+
+            <p class="text-cyan-400 text-sm font-semibold mb-1">
+                ${m.dept} (${m.year})
+            </p>
+
+            <p class="text-gray-300 text-sm mb-2">
+                ${m.prof}
+            </p>
+
+            <p class="text-gray-400 text-xs italic">
+                ${m.topic}
+            </p>
+
+        </div>
+        `;
+            });
+        }
+        renderMembers(iitMembers);
+        iitBtn.classList.add("active");
+
+        iitBtn.addEventListener("click", () => {
+            iitBtn.classList.add("active");
+            foreignBtn.classList.remove("active");
+            renderMembers(iitMembers);
+        });
+
+        foreignBtn.addEventListener("click", () => {
+            foreignBtn.classList.add("active");
+            iitBtn.classList.remove("active");
+            renderMembers(foreignMembers);
+        });
+    </script>
+
 </body>
 
 </html>
