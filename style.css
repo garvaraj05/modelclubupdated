@@ -6,6 +6,11 @@
     --glass-border: rgba(255, 255, 255, 0.1);
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -914,8 +919,9 @@ footer {
 
 /* Inner container like Tailwind "container mx-auto px-8" */
 .navbar>* {
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
+    padding: 0 20px;
 
     display: flex;
     justify-content: space-between;
