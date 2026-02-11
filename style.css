@@ -54,7 +54,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: radial-gradient(circle at 50% 50%, #0a192f 0%, #050505 100%);
+    background: radial-gradient(circle at 50% 50%, #151a27 0%, #000000 100%);
 }
 
 .bg-particles::after {
@@ -62,7 +62,7 @@ body {
     position: absolute;
     width: 200%;
     height: 200%;
-    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    /* background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); */
     animation: move 100s linear infinite;
     opacity: 0.3;
 }
