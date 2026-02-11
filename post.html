@@ -1,231 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post Bearers | Model Club</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body {
-            background-color: #050505;
-            color: white;
-            font-family: 'Inter', sans-serif;
+        body { background-color: #050505; color: white; font-family: 'Inter', sans-serif; }
+        
+        /* Smooth hover for the back button */
+        .back-btn {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: #00d2ff;
+            color: #000;
+            transform: translateX(-5px);
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
         }
 
         .member-card {
-            background: rgb(196 189 189 / 7%);
-            backdrop-filter: blur(3px);
-            -webkit-backdrop-filter: blur(14px);
-
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            border-radius: 18px;
-
-            box-shadow:
-                0 8px 20px rgba(0, 0, 0, 0.35);
-
-            transition: transform 0.3s ease,
-                box-shadow 0.3s ease,
-                border-color 0.3s ease;
+            background: #111;
+            border: 1px solid #222;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-
-
-
         .member-card:hover {
             border-color: #00d2ff;
             transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0, 210, 255, 0.25);
+            box-shadow: 0 15px 30px rgba(0, 210, 255, 0.15);
         }
-
         .glow-bar {
-            height: 3px;
-            width: 0;
-            background: #00d2ff;
-            transition: width 0.4s ease;
-            position: absolute;
-            bottom: 0;
-            left: 0;
+            height: 3px; width: 0; background: #00d2ff;
+            transition: width 0.4s ease; position: absolute; bottom: 0; left: 0;
         }
-
-        .member-card:hover .glow-bar {
-            width: 100%;
-        }
-
-        .img-container {
-            border: 2px solid #333;
-            overflow: hidden;
-        }
-
-        .member-card:hover .img-container {
-            border-color: #00d2ff;
-        }
+        .member-card:hover .glow-bar { width: 100%; }
+        .img-container { border: 2px solid #333; overflow: hidden; }
+        .member-card:hover .img-container { border-color: #00d2ff; }
     </style>
 </head>
+<body class="py-12 px-4 md:px-10">
 
-<body>
+    <div class="max-w-7xl mx-auto mb-10">
+        <a href="index.html" class="back-btn inline-flex items-center px-5 py-2 rounded-full text-sm font-medium tracking-wide">
+            <i class="fas fa-arrow-left mr-2"></i> BACK TO HOME
+        </a>
+    </div>
 
-    <header>
-        <nav class="navbar">
-            <div class="clogo">
-                <div class="logo"><img style="height: 60px;" src="./assets/Clogo.png" alt=""></div>
-                <div class="logo"><img style="height: 70px;" src="./assets/bitlogo.png" alt=""></div>
-            </div>
-            <ul class="nav-links" id="navLinks">
-                <div class="nav-indicator"></div>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="./event2.html">Events</a></li>
-                <li><a href="./sandhaan.html">SANDHAAN</a></li>
-                <li><a href="./post.html">Post Bearers</a></li>
-                <li><a href="./research.html">Research</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="menu-toggle" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header>
-    <div class="mobile-blur" id="mobileBlur"></div>
-
-    <!-- Wrapper only for main content -->
-    <div class="pt-32 px-4 md:px-10">
-
-        <div class="bg-particles"></div>
-
-        <div class="max-w-7xl mx-auto mb-10">
-            <a href="index.html"
-                class="back-btn inline-flex items-center px-5 py-2 rounded-full text-sm font-medium tracking-wide">
-                <i class="fas fa-arrow-left mr-2"></i>
-            </a>
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h1 class="text-3xl md:text-5xl font-extrabold uppercase tracking-widest mb-4">
+                Our <span class="text-cyan-400">Post Bearers</span>
+            </h1>
+            <div class="h-1 w-20 bg-cyan-500 mx-auto mb-4"></div>
+            <p class="text-gray-500 max-w-2xl mx-auto italic">Leading with innovation and excellence for the session 2K22-2K23.</p>
         </div>
 
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h1 class="text-3xl md:text-5xl font-extrabold uppercase tracking-widest mb-4">
-                    Our <span class="text-cyan-400">Post Bearers</span>
-                </h1>
-                <div class="h-1 w-20 bg-cyan-500 mx-auto mb-4"></div>
-                <p class="text-gray-500 max-w-2xl mx-auto italic">
-                    Leading with innovation and excellence for the session 2K22-2K23.
-                </p>
+        <div id="team-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             </div>
-
-            <div style="margin-bottom: 40px;" id="team-grid"
-                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            </div>
-        </div>
-
-    </div> <!-- End wrapper -->
-
-    <!-- Footer full width -->
-    <footer class="main-footer" id="contact">
-        <div class="footer-container">
-            <div class="footer-box reveal">
-                <div class="location-icon">
-                    <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <p>Model Club, BIT Sindri Dhanbad,<br>Jharkhand 828123.</p>
-            </div>
-
-            <div class="footer-box reveal">
-                <h3>Connect</h3>
-                <div class="footer-line"></div>
-                <ul class="social-links">
-                    <li><a href="https://www.facebook.com/modelclubbit"><i class="fab fa-facebook-f"></i> Facebook</a>
-                    </li>
-                    <li><a href="https://www.linkedin.com/company/modelclub-bitsindri"><i
-                                class="fab fa-linkedin-in"></i> LinkedIn</a></li>
-                    <li><a href="https://www.instagram.com/modelclubbit/"><i class="fab fa-instagram"></i> Instagram</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="footer-box reveal">
-                <h3>Get In Touch</h3>
-                <div class="footer-line"></div>
-                <ul class="contact-list">
-                    <li><i class="fas fa-envelope"></i> modelclub.web@gmail.com</li>
-                    <li><i class="fas fa-phone-alt"></i> Harshita Seth: +91 7004199068</li>
-                    <li><i class="fas fa-phone-alt"></i> Radhe Raman Singh: +91 8434845066</li>
-                    <li><i class="fas fa-phone-alt"></i> Prince Kumar: +91 9279336168</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p class="copyright">
-                Copyright &copy; 2026 The Model Club. All rights reserved.
-            </p>
-            <div class="developer-info">
-                <p>Designed and developed by</p>
-                <div class="dev-badges">
-                    <span class="dev-card">
-                        Himanshu Kumar
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </span>
-                    <span class="dev-card">
-                        Garva Raj
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+    </div>
 
     <script>
         const members = [
-            { name: "Harshita Seth", role: "Chairperson", dept: "Chemical Engineering", year: "2K22", photo: "./assets/Logo/harshitamam.jpg", fb: "https://www.facebook.com/harshitaseth2003?rdid=FR3Rx7Xu2JcHfL4x&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AfYKoFBNy%2F#", insta: "", linkedin: "https://www.linkedin.com/in/harshita-seth-74b280257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-            { name: "Prince Kumar", role: "Vice Chairperson", dept: "Civil Engineering", year: "2K22", photo: "./assets/Logo/princesir22.jpg", fb: "https://www.facebook.com/people/Prince-Kumar/pfbid02Sws9GAfjVbr38pPg18GYxRJLCct25BGFhsP2esG7sT3UjSE8jtr9wtLJf9QDggu3l/?rdid=Nl8u9tnHPKSAqBax&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AXkFqt6t4%2F", insta: "", linkedin: "https://www.linkedin.com/in/prince-kumar-aaa442304?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-            { name: "Radhe Raman Singh", role: "Vice Chairperson", dept: "Mechanical Engineering", year: "2K22", photo: "./assets/Logo/Radhesir.jpg", fb: "https://www.facebook.com/radhe.raman.940", insta: "", linkedin: "https://in.linkedin.com/in/radhe-raman-singh-6620bb292" },
-            { name: "Anand Kumar Paswan", role: "General Secretary", dept: "Mechanical Engineering", year: "2K22", photo: "./assets/Logo/anandsir.jpg", fb: "https://www.facebook.com/anand.paswan.315?mibextid=rS40aB7S9Ucbxw6v", insta: "", linkedin: "https://www.linkedin.com/in/anand-kumar-3509a5256?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-            { name: "Sahitya Kumar", role: "Joint Secretary", dept: "Chemical Engineering", year: "2K22", photo: "./assets/Logo/Sahityasir1.jpg", fb: "https://www.facebook.com/profile.php?id=100009423218743", insta: "", linkedin: "https://www.linkedin.com/in/sahitya-kumar-897a27253?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-            { name: "Shivam Raj", role: "Joint Secretary", dept: "ECE", year: "2K22", photo: "./assets/Logo/Shivamsir.png", fb: "https://www.facebook.com/share/157L7vn8AU/", insta: "", linkedin: "https://www.linkedin.com/in/shivam-raj-b32806257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-            { name: "Amrit Raj", role: "Treasurer", dept: "Electrical Engineering", year: "2K22", photo: "./assets/Logo/Amritsir.jpg", fb: "https://www.facebook.com/share/16ee68R6kZ/", insta: "", linkedin: "https://www.linkedin.com/in/amritraj2002?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-            { name: "Norbert Harshit Joseph", role: "Joint Treasurer", dept: "IT", year: "2K22", photo: "./assets/Logo/Norbertsir1.jpg", fb: "https://www.facebook.com/share/16C7rogd8t/", insta: "", linkedin: "https://www.linkedin.com/in/norbert-harshit-joseph-b87535258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-            { name: "D Vaibhavi", role: "Joint Treasurer", dept: "Electrical Engineering", year: "2K22", photo: "./assets/Logo/Vaibhavimam.jpg", fb: "https://www.facebook.com/share/1HzZgeZUpz/", insta: "", linkedin: "http://www.linkedin.com/in/d-vaibhavi-536582273" },
-            { name: "Sneha Rana", role: "PRO and Curator", dept: "Electrical Engineering", year: "2K22", photo: "./assets/Logo/snehamam1.jpg", fb: "https://www.facebook.com/share/1Bxkc8Be18/", insta: "", linkedin: "https://www.linkedin.com/in/sneha-rana-8b3664257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-            { name: "Ayush Mishra", role: "PRO and Curator", dept: "Metallurgical Engineering", year: "2K22", photo: "./assets/Logo/Ayushsir.jpg", fb: "https://www.facebook.com/profile.php?id=100009235411718", insta: "", linkedin: "https://www.linkedin.com/in/ayush-mishra-306428210?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-            { name: "Aashi Rani", role: "Joint PRO & Alumni In Charge", dept: "Chemical Engineering", year: "2K22", photo: "./assets/Logo/Aashimam1.jpg", fb: "https://www.facebook.com/share/155iHxtbW6/", insta: "", linkedin: "https://www.linkedin.com/in/aashi-rani-a6824730a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-            { name: "Prince Kumar", role: "Technical Head", dept: "Electrical Engineering", year: "2K22", photo: "./assets/Logo/Princesir.jpg", fb: "https://www.facebook.com/profile.php?id=100089622554163", insta: "", linkedin: "https://www.linkedin.com/in/prince-kumar-240722257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-            { name: "Sangita Bharti", role: "Creative Head", dept: "Metallurgical Engineering", year: "2K22", photo: "./assets/Logo/Sangeetamam1.jpg", fb: "https://www.facebook.com/share/1AeZFXjuYX/", insta: "", linkedin: "https://www.linkedin.com/in/sangita-bharti-9ba64b263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-            { name: "Chahat Singh", role: "Event & Marketing Manager", dept: "ECE", year: "2K22", photo: "./assets/Logo/chahatmam.jpg", fb: "https://www.facebook.com/profile.php?id=100022859675490", insta: "", linkedin: "https://www.linkedin.com/in/chahat-singh-a709b4251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" }
+            { name: "Harshita Seth", role: "Chairperson", dept: "Chemical Engineering", year: "2K22" },
+            { name: "Prince Kumar", role: "Vice Chairperson", dept: "Civil Engineering", year: "2K22" },
+            { name: "Radhe Raman Singh", role: "Vice Chairperson", dept: "Mechanical Engineering", year: "2K22" },
+            { name: "Anand Kumar Paswan", role: "General Secretary", dept: "Mechanical Engineering", year: "2K22" },
+            { name: "Sahitya Kumar", role: "Joint Secretary", dept: "Chemical Engineering", year: "2K22" },
+            { name: "Shivam Raj", role: "Joint Secretary", dept: "ECE", year: "2K22" },
+            { name: "Amrit Raj", role: "Treasurer", dept: "Electrical Engineering", year: "2K22" },
+            { name: "Norbert Harshit Joseph", role: "Joint Treasurer", dept: "IT", year: "2K22" },
+            { name: "D Vaibhavi", role: "Joint Treasurer", dept: "Electrical Engineering", year: "2K22" },
+            { name: "Sneha Rana", role: "PRO and Curator", dept: "Electrical Engineering", year: "2K22" },
+            { name: "Ayush Mishra", role: "PRO and Curator", dept: "Metallurgical Engineering", year: "2K22" },
+            { name: "Aashi Rani", role: "Joint PRO & Alumni In Charge", dept: "Chemical Engineering", year: "2K22" },
+            { name: "Prince Kumar", role: "Technical Head", dept: "Electrical Engineering", year: "2K22" },
+            { name: "Sangita Kumari", role: "Creative Head", dept: "Metallurgical Engineering", year: "2K22" },
+            { name: "Chahat Kumari", role: "Event & Marketing Manager", dept: "ECE", year: "2K22" }
         ];
 
         const container = document.getElementById('team-grid');
 
         members.forEach(m => {
             container.innerHTML += `
-        <div class="member-card relative overflow-hidden rounded-xl p-6 flex flex-col items-center text-center">
-            <h2 class="text-lg font-bold uppercase tracking-wider mb-6 h-12 flex items-center">${m.name}</h2>
-            
-            <div class="img-container w-36 h-36 rounded-xl mb-6 bg-gray-800">
-                <img src="${m.photo}" alt="${m.name}" class="w-full h-full object-cover transition duration-500">
-            </div>
+                <div class="member-card relative overflow-hidden rounded-xl p-6 flex flex-col items-center text-center">
+                    <h2 class="text-lg font-bold uppercase tracking-wider mb-6 h-12 flex items-center">${m.name}</h2>
+                    
+                    <div class="img-container w-36 h-36 rounded-xl mb-6 bg-gray-800">
+                        <img src="https://via.placeholder.com/200" alt="${m.name}" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500">
+                    </div>
 
-            <div class="space-y-1 mb-6">
-                <p class="text-cyan-400 font-bold text-sm tracking-wide uppercase">${m.role}</p>
-                <p class="text-gray-400 text-xs">${m.dept}</p>
-                <p class="text-gray-500 text-[10px] font-mono">${m.year}</p>
-            </div>
+                    <div class="space-y-1 mb-6">
+                        <p class="text-cyan-400 font-bold text-sm tracking-wide uppercase">${m.role}</p>
+                        <p class="text-gray-400 text-xs">${m.dept}</p>
+                        <p class="text-gray-500 text-[10px] font-mono">${m.year}</p>
+                    </div>
 
-            <div class="flex space-x-6 mt-auto pt-4 border-t border-gray-800 w-full justify-center text-gray-400">
-                <a href="${m.fb}" class="hover:text-white transition-colors text-lg"><i class="fab fa-facebook"></i></a>
-                <a href="${m.linkedin}" class="hover:text-cyan-400 transition-colors text-lg"><i class="fab fa-linkedin"></i></a>
-                <a href="${m.insta}" class="hover:text-pink-500 transition-colors text-lg"><i class="fab fa-instagram"></i></a>
-            </div>
-            
-            <div class="glow-bar"></div>
-        </div>
-    `;
+                    <div class="flex space-x-6 mt-auto pt-4 border-t border-gray-800 w-full justify-center text-gray-400">
+                        <a href="#" class="hover:text-white transition-colors text-lg"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="hover:text-cyan-400 transition-colors text-lg"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-pink-500 transition-colors text-lg"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    
+                    <div class="glow-bar"></div>
+                </div>
+            `;
         });
     </script>
-
 </body>
-
 </html>
