@@ -14,6 +14,7 @@
             color: #fff;
             font-family: 'Space Grotesk', sans-serif;
             overflow-x: hidden;
+            width: 100%;
         }
 
         /* Animated Cyber Background */
@@ -46,6 +47,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             filter: drop-shadow(0 0 15px rgba(0, 242, 255, 0.5));
+            line-height: 1.1;
         }
 
         .event-card {
@@ -69,7 +71,6 @@
             opacity: 0.5;
         }
 
-        /* Image frame styling */
         .img-container {
             position: relative;
             clip-path: polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%);
@@ -79,70 +80,54 @@
             background: linear-gradient(45deg, rgba(0,242,255,0.2) 0%, transparent 100%);
             mix-blend-mode: overlay;
         }
+
+        /* Fix for mobile text overflow */
+        @media (max-width: 640px) {
+            .hero-text {
+                font-size: 3.5rem !important;
+                letter-spacing: -0.02em;
+            }
+            .mobile-tracking {
+                letter-spacing: 0.2em !important;
+            }
+        }
     </style>
 </head>
 <body>
 
     <div class="bg-animate"><div class="cyber-grid"></div></div>
 
-    <nav class="p-6 flex justify-between items-center sticky top-0 z-50 backdrop-blur-md border-b border-white/5">
-        <div class="text-2xl font-bold tracking-tighter">SANDHAAN<span class="text-cyan-400">'24</span></div>
-        <a href="index.html" class="text-[10px] tracking-[0.3em] font-bold border border-cyan-400/30 px-4 py-2 hover:bg-cyan-400 hover:text-black transition-all">BACK TO BASE</a>
+    <nav class="p-4 md:p-6 flex justify-between items-center sticky top-0 z-50 backdrop-blur-md border-b border-white/5">
+        <div class="text-xl md:text-2xl font-bold tracking-tighter uppercase">SANDHAAN<span class="text-cyan-400">'24</span></div>
+        <a href="index.html" class="text-[9px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] font-bold border border-cyan-400/30 px-3 py-2 hover:bg-cyan-400 hover:text-black transition-all">BACK TO BASE</a>
     </nav>
 
-    <div class="container mx-auto px-6 py-20">
-        <header class="text-center mb-24">
-            <h1 class="hero-text text-6xl md:text-9xl font-bold mb-4">SANDHAAN</h1>
-            <p class="text-cyan-100/60 max-w-xl mx-auto tracking-[0.5em] uppercase text-xs">Accessing Neural Network...</p>
+    <main class="container mx-auto px-4 md:px-6 py-12 md:py-20">
+        <header class="text-center mb-16 md:mb-24">
+            <h1 class="hero-text text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold mb-4">
+                SANDHAAN
+            </h1>
+            <p class="mobile-tracking text-cyan-100/60 max-w-xs md:max-w-xl mx-auto tracking-[0.5em] uppercase text-[10px] md:text-xs">
+                Accessing Neural Network...
+            </p>
         </header>
 
-        <div id="dynamic-events" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div id="dynamic-events" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
             </div>
-    </div>
+    </main>
 
     <script>
         const events = [
-            { 
-                title: "Robo Saga", 
-                tag: "Heavy Metal", 
-                desc: "The ultimate battle of bots in a steel cage.", 
-                img: "#" 
-            },
-            { 
-                title: "Drone-A-Thon", 
-                tag: "Aerodynamics", 
-                desc: "Navigate through technical obstacles at high speed.", 
-                img: "#" 
-            },
-            { 
-                title: "AlgoArena", 
-                tag: "Code", 
-                desc: "Optimize or be optimized. The syntax war begins.", 
-                img: "#" 
-            },
-            { 
-                title: "HydroFlight", 
-                tag: "Science", 
-                desc: "Aero-modeling using pressurized water propulsion.", 
-                img: "#" 
-            },
-            { 
-                title: "Site Mimic", 
-                tag: "Web 3.0", 
-                desc: "Build the future of UI with pixel perfection.", 
-                img: "#" 
-            },
-            { 
-                title: "Wizard's Chess", 
-                tag: "Strategy", 
-                desc: "Checkmate the competition in a grand strategy duel.", 
-                img: "#" 
-            }
+            { title: "Robo Saga", tag: "Heavy Metal", desc: "The ultimate battle of bots in a steel cage.", img: "https://images.unsplash.com/photo-1531746790731-6c2079ee396f?auto=format&fit=crop&q=80&w=400" },
+            { title: "Drone-A-Thon", tag: "Aerodynamics", desc: "Navigate through technical obstacles at high speed.", img: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=400" },
+            { title: "AlgoArena", tag: "Code", desc: "Optimize or be optimized. The syntax war begins.", img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=400" },
+            { title: "HydroFlight", tag: "Science", desc: "Aero-modeling using pressurized water propulsion.", img: "https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&q=80&w=400" },
+            { title: "Site Mimic", tag: "Web 3.0", desc: "Build the future of UI with pixel perfection.", img: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&q=80&w=400" },
+            { title: "Wizard's Chess", tag: "Strategy", desc: "Checkmate the competition in a grand strategy duel.", img: "https://images.unsplash.com/photo-1528819622765-d6bcf132f793?auto=format&fit=crop&q=80&w=400" }
         ];
 
         const container = document.getElementById('dynamic-events');
 
-        // Render cards with images
         container.innerHTML = events.map(e => `
             <div class="event-card relative p-6 rounded-xl group cursor-pointer" data-tilt data-tilt-max="10">
                 <div class="neon-border"></div>
@@ -173,7 +158,7 @@
             </div>
         `).join('');
 
-        // Re-initialize Tilt on the new elements
+        // Re-initialize Tilt
         VanillaTilt.init(document.querySelectorAll(".event-card"));
     </script>
 </body>
