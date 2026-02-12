@@ -1105,7 +1105,11 @@ footer {
     .menu-toggle {
         display: flex;
     }
+    .nav-indicator {
+        display: none !important;
+    }
 }
+
 
 /* Mobile Blur Overlay */
 .mobile-blur {
