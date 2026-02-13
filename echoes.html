@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echoes of Excellence | Model Club BIT Sindri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #000000; }
+        .glass-card { 
+            background: rgba(15, 23, 42, 0.6); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="text-slate-300">
+
+    <header>
+        <nav class="navbar">
+            <div class="clogo">
+                <div class="logo"><img style="height: 60px;" src="./assets/Clogo.png" alt=""></div>
+                <div class="logo"><img style="height: 70px;" src="./assets/bitlogo.png" alt=""></div>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <div class="nav-indicator"></div>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./index.html#about">About</a></li>
+                <li><a href="./sandhaan.html">Techfest</a></li>
+                <li><a href="./event2.html">Events</a></li>
+                <li><a href="./post.html">Post Bearers</a></li>
+                <li><a href="./research.html">Internship</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+    <div class="mobile-blur" id="mobileBlur"></div>
+    
+    <!-- HERO -->
+    <header class="pt-20 pb-16 px-6 text-center">
+        <div class="bg-particles"></div>
+        <div class="max-w-7xl mx-auto mb-10">
+            <!-- <a href="index.html"
+                class="back-btn inline-flex items-center px-5 py-2 rounded-full text-sm font-medium tracking-wide">
+                <i class="fas fa-arrow-left mr-2"></i>
+            </a> -->
+        </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">
+            ECHOES OF <span class="text-gradient">Excellence</span>
+        </h1>
+        
+        <h2 class="text-gradient text-2xl font-extrabold">
+            Highlighting the resilience and success stories of our alumni.
+        </h2>
+        <p class="max-w-2xl mx-auto text-lg text-slate-400">
+            Echoes of Excellence is a signature talk series and initiative by the Model Club at BIT Sindri, 
+            designed to showcase inspiring journeys of success, resilience, and professional growth.
+        </p>
+    </header>
+     
+
+    
+    <!-- ARCHIVE SECTION -->
+    <section id="archive" class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="text-3xl font-bold text-white mb-10">Series Archive</h2>
+
+        <div id="videoContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </section>
+
+    <!-- Footer full width -->
+    <footer class="main-footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-box reveal">
+                <div class="location-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <p>Model Club, BIT Sindri Dhanbad,<br>Jharkhand 828123.</p>
+            </div>
+
+            <div class="footer-box reveal">
+                <h3>Connect</h3>
+                <div class="footer-line"></div>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com/modelclubbit"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    </li>
+                    <li><a href="https://www.linkedin.com/company/modelclub-bitsindri"><i
+                                class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                    <li><a href="https://www.instagram.com/modelclubbit/"><i class="fab fa-instagram"></i> Instagram</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-box reveal">
+                <h3>Get In Touch</h3>
+                <div class="footer-line"></div>
+                <ul class="contact-list">
+                    <li><i class="fas fa-envelope"></i> modelclub.web@gmail.com</li>
+                    <li><i class="fas fa-phone-alt"></i> Harshita Seth: +91 7004199068</li>
+                    <li><i class="fas fa-phone-alt"></i> Radhe Raman Singh: +91 8434845066</li>
+                    <li><i class="fas fa-phone-alt"></i> Prince Kumar: +91 9279336168</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="copyright">
+                Copyright &copy; 2026 The Model Club. All rights reserved.
+            </p>
+            <div class="developer-info">
+                <p>Designed and developed by</p>
+                <div class="dev-badges">
+                    <span class="dev-card">Himanshu Kumar <a href="https://www.linkedin.com/in/himanshu-mishra-432334330/"><i class="fab fa-linkedin"></i></a> <a href="#"><i
+                                class="fab fa-instagram"></i></a></span>
+                    <span class="dev-card">Garva Raj <a href="https://www.linkedin.com/in/garva-raj-a82087317/"><i class="fab fa-linkedin"></i></a> <a href="#"><i
+                                class="fab fa-instagram"></i></a></span>
+                    <span class="dev-card">Maitri <a href="https://www.linkedin.com/in/maitri-89a17732a/"><i class="fab fa-linkedin"></i></a> <a href="#"><i
+                                class="fab fa-instagram"></i></a></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+     <script src="script.js"></script>
+    <script>
+
+        const videos = [
+    {
+        episode: "EP 04",
+        title: "THE MINDSET BEHIND BIT TO IIM",
+        speaker: "Mr. Swaraj Singh • IIM Alumni",
+        description: "Clarity of purpose and courage transformed his journey.",
+        embed: "https://www.youtube.com/embed/KJ3VekEN4hU?si=suBRs8cyN4wr7ec-",
+        watchLink: "https://youtu.be/KJ3VekEN4hU?si=hqsxWVRmxrFLt5wi"
+    },
+    {
+        episode: "EP 03",
+        title: "BLUEPRINT OF THE FUTURE : THE DATA ANALYTICS JOURNEY",
+        speaker: "Mr. Narayan Mahto • Data Scientist",
+        description: "Exploring the depths of data science.",
+        embed: "https://www.youtube.com/embed/OqSyd7JApyM?si=dO71VUUGgbgemX3E",
+        watchLink: "https://youtu.be/OqSyd7JApyM?si=7MFEAS8835jVBTMw"
+    },
+    {
+        episode: "EP 02",
+        title: "The Maharatna Mentality: Lessons from Ex GM (IOCL)",
+        speaker: "Mr Indu Kumar Jha • Ex GM (IOCL)",
+        description: "Insights from a seasoned leader on excellence, values, and the mindset that drives success.",
+        embed: "https://www.youtube.com/embed/c_ZBpwQT03A?si=QQfZCJdCsowV3iEO",
+        watchLink: "https://youtu.be/c_ZBpwQT03A?si=y7yu0Q272ntsWUmm"
+    },
+    {
+        episode: "EP 01",
+        title: "BIT To LBSNAA",
+        speaker: "Mr. Sumit Kumar Thakur • IAS Officer",
+        description: "The premiere episode featuring a journey from Model Club to national administrative service.",
+        embed: "https://www.youtube.com/embed/zLF4gO2a_Vg?si=VUjwYioqJrsjkpa7",
+        watchLink: "https://youtu.be/zLF4gO2a_Vg?si=SSsS_PDZy-iI3BTG"
+    }
+];
+
+
+        const container = document.getElementById("videoContainer");
+
+        videos.map(video => {
+            container.innerHTML += `
+                <div class="glass-card rounded-2xl p-5 border border-white/10 hover:scale-105 transition duration-300">
+                    
+                    <div class="aspect-video mb-4 rounded-xl overflow-hidden">
+                        <iframe 
+                            class="w-full h-full"
+                            src="${video.embed}"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <span class="text-xs bg-blue-600 px-2 py-1 rounded font-bold">
+                        ${video.episode}
+                    </span>
+
+                    <h3 class="text-xl font-bold text-white mt-3 mb-2">
+                        ${video.title}
+                    </h3>
+
+                    <p class="text-sm text-slate-400 mb-4">
+                        ${video.speaker}
+                    </p>
+
+                    <p class="text-sm text-slate-500 mb-4">
+                        ${video.description}
+                    </p>
+
+                    <a href="${video.watchLink}" target="_blank"
+                       class="inline-block bg-white text-black px-6 py-2 rounded-full font-bold hover:bg-blue-500 hover:text-white transition">
+                       Watch Now
+                    </a>
+
+                </div>
+            `;
+        });
+
+    </script>
+
+</body>
+</html>
